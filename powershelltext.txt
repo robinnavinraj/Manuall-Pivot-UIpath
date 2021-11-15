@@ -1,0 +1,12 @@
+$ExcelObject = new-Object -comobject Excel.Application 
+$strPath1="C:\Users\Admin\Documents\UiPath\Development\Input files\Raw data.xlsx"
+$ActiveWorkbook = $ExcelObject.WorkBooks.Open($strPath1)  
+$ActiveWorksheet = $ActiveWorkbook.Worksheets.Item(1)
+$ActiveWorksheet.Cells.Item(1,15) = "value1" 
+$ActiveWorksheet.Cells.Item(1,19) = "value2" 
+$ActiveWorksheet.Cells.Item(1,20) = "value3" 
+$ActiveWorksheet.Cells.Item(1,23) = "value4" 
+$ActiveWorksheet.Cells.Item(1,24) = "INV#" 
+$ActiveWorksheet.Cells.Item(1,25) = "REC#" 
+$ActiveWorkbook.Save()
+$ActiveWorkbook.close($true)

@@ -1,0 +1,8 @@
+$ExcelObject = new-Object -comobject Excel.Application 
+$strPath1="D:\Powershell\Test\test2.xlsx"
+$ActiveWorkbook = $ExcelObject.WorkBooks.Open($strPath1)  
+$ActiveWorksheet = $ActiveWorkbook.Worksheets.Item(1)
+$range= $ActiveWorksheet.Range('b2:d4')
+[Void]$range.BorderAround($xlContinuous,$xlThin,$xlColorIndexBlue)
+$ActiveWorkbook.Save()
+$ActiveWorkbook.close($true)
